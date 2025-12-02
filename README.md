@@ -2,11 +2,11 @@
 
 Aplicación full-stack para gestión de tareas desarrollada con NestJS (backend) y React + TypeScript + Tailwind (frontend).
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 ### Backend
 - **Node.js** - Runtime de JavaScript
-- **NestJS** - Framework de Node.js
+- **NestJS** - Framework de Node.js 
 - **Prisma** - ORM para base de datos
 - **MySQL** - Base de datos relacional
 
@@ -17,14 +17,14 @@ Aplicación full-stack para gestión de tareas desarrollada con NestJS (backend)
 - **Vite** - Build tool y dev server
 - **Axios** - Cliente HTTP
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 - Node.js (v18 o superior)
 - MySQL (v8 o superior) - Se instalará automáticamente si usas el script de setup
 - npm o yarn
 - Homebrew (para macOS) - Para instalar MySQL localmente
 
-## 🚀 Instalación y Configuración
+## Instalación y Configuración
 
 ### 1. Instalar MySQL Local (si no lo tienes)
 
@@ -36,20 +36,6 @@ brew services start mysql
 ```
 
 ### 2. Configurar Base de Datos MySQL
-
-**Opción A: Usar el script de configuración automática (Recomendado)**
-
-```bash
-cd backend
-./setup-db.sh
-```
-
-Este script:
-- Verifica que MySQL esté corriendo
-- Crea la base de datos `todo_db`
-- Crea el archivo `.env` con la configuración local
-
-**Opción B: Configuración manual**
 
 1. Inicia MySQL (si no está corriendo):
 ```bash
@@ -89,7 +75,7 @@ cd frontend
 npm install
 ```
 
-## 🏃 Ejecutar la Aplicación
+## Ejecutar la Aplicación
 
 ### Backend
 
