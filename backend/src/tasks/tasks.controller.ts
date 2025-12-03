@@ -13,6 +13,7 @@ import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { JwtAuthGuard } from 'src/middlewares/auth.middleware';
+import { User } from '../auth/decorators/user.decorator';
 
 @UseGuards(JwtAuthGuard)
 @Controller('tasks')
@@ -20,31 +21,42 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Post()
-  create(@Body() createTaskDto: CreateTaskDto) {
-    return this.tasksService.create(createTaskDto);
+  async create(
+    @Body() createTaskDto: CreateTaskDto,
+    @User() user: any,
+  ) {
+    return await this.tasksService.create(createTaskDto, user.userId);
   }
 
   @Get()
-  findAll() {
-    return this.tasksService.findAll();
+  async findAll(@User() user: any) {
+    return  await this.tasksService.findAll(user.userId);;
+    
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.tasksService.findOne(id);
+  async findOne(
+    @Param('id', ParseIntPipe) id: number,
+    @User() user: any,
+  ) {
+    return await this.tasksService.findOne(id, user.userId);
   }
 
   @Patch(':id')
-  update(
+  async update(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateTaskDto: UpdateTaskDto,
+    @User() user: any,
   ) {
-    return this.tasksService.update(id, updateTaskDto);
+    return await this.tasksService.update(id, updateTaskDto, user.userId);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.tasksService.remove(id);
+  async remove(
+    @Param('id', ParseIntPipe) id: number,
+    @User() user: any,
+  ) {
+    return await this.tasksService.remove(id, user.userId);
   }
 }
 
