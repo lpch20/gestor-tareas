@@ -69,7 +69,6 @@ export default function LoginForm() {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none transition-all"
               style={{ 
                 borderColor: '#441A85',
-                focusRingColor: '#441A85',
                 color: '#050108'
               }}
               placeholder="Ingresa tu usuario"
@@ -90,7 +89,6 @@ export default function LoginForm() {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none transition-all"
               style={{ 
                 borderColor: '#441A85',
-                focusRingColor: '#441A85',
                 color: '#050108'
               }}
               placeholder="Ingresa tu contraseña"
@@ -105,7 +103,6 @@ export default function LoginForm() {
             className="w-full text-white py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all font-medium shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ 
               backgroundColor: '#441A85',
-              focusRingColor: '#441A85'
             }}
           >
             {loading ? (
