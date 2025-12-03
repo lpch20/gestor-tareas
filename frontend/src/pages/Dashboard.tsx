@@ -41,7 +41,6 @@ export default function Dashboard() {
           <h1 className="text-5xl font-bold mb-2" style={{ color: '#441A85' }}>
             📋 Tablero de Tareas
           </h1>
-          <p className="text-lg" style={{ color: '#050108' }}>Organiza tus tareas estilo Trello</p>
           {totalTasks > 0 && (
             <div className="flex justify-center gap-4 mt-4">
               <span className="px-4 py-2 rounded-full shadow-sm text-sm" style={{ backgroundColor: '#FFFFFF', color: '#050108', border: '1px solid #441A85' }}>
@@ -70,7 +69,7 @@ export default function Dashboard() {
           </div>
         )}
 
-        <div className="rounded-xl shadow-xl p-6 mb-6 border" style={{ backgroundColor: '#FFFFFF', borderColor: '#441A85' }}>
+        <div className="mb-6 flex justify-end">
           <TaskForm onSubmit={createTask} />
         </div>
 
