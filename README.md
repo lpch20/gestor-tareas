@@ -17,6 +17,26 @@ Aplicación full-stack para gestión de tareas desarrollada con NestJS (backend)
 - **Vite** - Build tool y dev server
 - **Axios** - Cliente HTTP
 
+## Arquitectura del Proyecto
+
+La aplicación sigue una arquitectura de separación de responsabilidades con un backend API REST y un frontend SPA (Single Page Application). El backend está estructurado en módulos siguiendo los principios de NestJS, mientras que el frontend utiliza una arquitectura basada en componentes con gestión de estado mediante Context API.
+
+La comunicación entre frontend y backend se realiza mediante peticiones HTTP RESTful, utilizando JWT para la autenticación y autorización de usuarios. La base de datos relacional almacena tanto la información de usuarios como las tareas, manteniendo relaciones entre ellas.
+
+## Decisiones Técnicas
+
+### Backend
+- **NestJS**: Se eligió por su arquitectura modular y escalable, facilitando la organización del código y el mantenimiento a largo plazo.
+- **Prisma**: Como ORM, proporciona type-safety y una capa de abstracción robusta sobre la base de datos, simplificando las operaciones y migraciones.
+- **JWT**: Implementado para autenticación stateless, permitiendo escalabilidad horizontal sin necesidad de sesiones en servidor.
+- **MySQL**: Base de datos relacional que garantiza la integridad de los datos y soporta relaciones complejas entre entidades.
+
+### Frontend
+- **React con TypeScript**: Combinación que ofrece tipado estático y mejor experiencia de desarrollo, reduciendo errores en tiempo de ejecución.
+- **Context API**: Para gestión de estado global de autenticación y tareas, evitando dependencias adicionales y manteniendo la aplicación ligera.
+- **Tailwind CSS**: Framework utility-first que permite desarrollo rápido de interfaces sin necesidad de escribir CSS personalizado extenso.
+- **Vite**: Herramienta de build moderna que ofrece tiempos de desarrollo significativamente más rápidos comparado con otras alternativas.
+
 ## Requisitos Previos
 
 - Node.js (v18 o superior)
